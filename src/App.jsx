@@ -15,7 +15,7 @@ function App() {
 
 
   useEffect(() => {
-    axios.get('http://[::1]:3000/products')
+    axios.get('https://backend-homedesign.onrender.com/products')
     .then(res => setProducts(res.data))
     .catch(err => console.log(err))
 

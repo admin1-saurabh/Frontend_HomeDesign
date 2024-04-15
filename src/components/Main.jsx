@@ -16,7 +16,7 @@ function Main({ wishList, setWishList, products, setProducts }) {
 
   const handleDeleted = (id) => {
     
-    axios.delete(`http://[::1]:3000/products/${id}`)
+    axios.delete(`https://backend-homedesign.onrender.com/products/${id}`)
     .then(setProducts(products.filter((product) => product.id !== id)))
     .catch(err => console.log(err))
     
