@@ -33,7 +33,7 @@ function Navbar({ wishList ,  products, setProducts}) {
   const handleCreate = () => {
     
     try {
-      axios.post("https://backend-homedesign.onrender.com/products", createdProduct);
+      axios.post("https://backend-homedesign-1.onrender.com/products", createdProduct);
     setProducts(products.concat(createdProduct));
     onCloseModalC();
     } catch (error) {

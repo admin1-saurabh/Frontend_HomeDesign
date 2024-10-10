@@ -14,7 +14,7 @@ function UserProfile() {
 
 
  useEffect(() => {
-  axios.get('https://backend-homedesign.onrender.com/products')
+  axios.get('https://backend-homedesign-1.onrender.com/products')
   .then(res => setProducts(res.data))
   .catch(err => console.log(err))
 
@@ -28,7 +28,7 @@ function UserProfile() {
   const [details, setDetails] = useState();
  
   useEffect(() => {
-    axios.get(`https://backend-homedesign.onrender.com/merchants/${id}`)
+    axios.get(`https://backend-homedesign-1.onrender.com/merchants/${id}`)
       .then(res => setDetails(res.data))
       .catch(err => console.log(err))
 
@@ -72,7 +72,7 @@ function UserProfile() {
   const handleCreate = () => {
     
     try {
-      axios.post("https://backend-homedesign.onrender.com/products", createdProduct);
+      axios.post("https://backend-homedesign-1.onrender.com/products", createdProduct);
     setProducts(products.concat(createdProduct));
     onCloseModalC();
     } catch (error) {
@@ -103,7 +103,7 @@ function UserProfile() {
   };
   const handleDeleted = (id) => {
     
-    axios.delete(`https://backend-homedesign.onrender.com/products/${id}`)
+    axios.delete(`https://backend-homedesign-1.onrender.com/products/${id}`)
     .then(setProducts(products.filter((product) => product.id !== id)))
     .catch(err => console.log(err))
     
@@ -111,7 +111,7 @@ function UserProfile() {
 
   const handleSubmit = () => {
     // Handle form submission, e.g., update product details
-    axios.put(`https://backend-homedesign.onrender.com/products/${productId}`, editedProduct);
+    axios.put(`https://backend-homedesign-1.onrender.com/products/${productId}`, editedProduct);
     setProducts(products.map((product) => (product.id === productId ? { ...product, ...editedProduct } : product)));
     onCloseModal();
     setEditedProduct({});
